@@ -124,4 +124,5 @@ Development history: github.com/Dicoangelo/burstiness-engine (private; available
 
 ## License
 
-Code: Apache 2.0. Data: CC BY 4.0. The human articles are Wikinews, CC BY 2.5.
+Code: Apache 2.0 (see LICENSE). Data: the Hugging Face dataset burstiness-engine/sentence-length-dispersion is
+released under CC BY 2.5, the licence of the English Wikinews articles it contains; its card carries the attribution.
