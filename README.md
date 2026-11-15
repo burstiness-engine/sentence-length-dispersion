@@ -103,3 +103,26 @@ Scripts with package imports (burstiness_pp, seed_avg_paired) run module-style w
 python -m from this root. Requirements: Python 3.10+. The metric and all scoring are
 standard library. Generation needs bench/requirements.txt; the corpus rebuild needs
 mwparserfromhell.
+
+## Contributions
+
+**Vittoria Lanzo** (lead author): the research idea and scope; the sentence-length burstiness
+metric (Goh–Barabási coefficient under the Kim–Jo finite-n correction) and the Goodhart guard;
+the generation harness and the five prompting modes; the paired Wikinews corpus; the
+seed-averaged paired test; the Qwen3.6-27B leg; the paper, both submissions, and the
+camera-ready re-scoring including the segmenter fix.
+
+**Dico Angelo**: the original burstiness-engine repository, paper build system and project site
+(https://burstiness-research.metaventionsai.com); the literature synthesis; compute and API
+funding; the generation legs for DeepSeek V4 Pro (including the 18 October re-run and the
+paraphrase probe), Grok 4.3, Grok 4.5, Gemini 3.1 Pro, Gemma 3 27B, GLM-5.2, Kimi K2.6 and
+Claude Opus 4.8; the generation-hygiene audit and uniform normalization; the equivalence,
+multiplicity and contamination analyses; the moderation-refusal audit; the table generator;
+venue selection; and the NeurIPS presentation.
+
+Development history: github.com/Dicoangelo/burstiness-engine (private; available on request).
+
+## License
+
+Code: Apache 2.0 (see LICENSE). Data: the Hugging Face dataset burstiness-engine/sentence-length-dispersion is
+released under CC BY 2.5, the licence of the English Wikinews articles it contains; its card carries the attribution.
