@@ -103,3 +103,44 @@ Scripts with package imports (burstiness_pp, seed_avg_paired) run module-style w
 python -m from this root. Requirements: Python 3.10+. The metric and all scoring are
 standard library. Generation needs bench/requirements.txt; the corpus rebuild needs
 mwparserfromhell.
+
+## Contributions
+
+**Vittoria Lanzo** (first author) proposed the project and its research questions, and
+narrowed its scope from an in-generation controller to a measurement study of prompting.
+She defined the metric (the Goh–Barabási coefficient under the Kim–Jo finite-n correction,
+with its Gini check, segmentation-entropy and memory companions, and the Goodhart guard),
+validated it in the era-controlled ablation, and ran the analysis showing that
+sentence-length variance tracks mean sentence length while B_n does not. She designed the
+benchmark protocol: the paired Wikinews corpus, the five prompting modes with frozen
+few-shot exemplars, the generation harness and the seed-averaged paired test. She built the
+vLLM pipeline for open-weights generation and ran the Qwen3.6-27B leg on it. She wrote the
+paper, chose LP4FM as the venue and made both submissions. For the camera-ready she answered
+both reviews, found the segmenter error and re-scored all nine legs from their raw
+generations, put the equivalence verdicts on unrounded intervals, and added the October
+DeepSeek re-run as a tenth leg. She released the public dataset and this repository jointly
+with Dico Angelo, and steered the poster's revision around the statistical tests and the
+few-shot result.
+
+**Dico Angelo**: the initial burstiness-engine repository, set up in June for the project's
+earlier in-generation controller scope, where he built and tested a boundary-FUDGE decoding
+controller on GPT-2 medium (activation-steering sweeps, paired-decoding robustness checks),
+ran a held-out human-versus-machine discriminativeness test, and wrote the perception-study
+protocol and the controller-scope paper drafts; CI checks that keep reported numbers in
+sync with the results and the paper build system, which also support this paper; the project
+site (https://burstiness-research.metaventionsai.com); the literature synthesis; compute and
+API funding; the generation legs for DeepSeek V4 Pro (including the 18 October re-run and the
+paraphrase probe), Grok 4.3, Grok 4.5, Gemini 3.1 Pro, Gemma 3 27B, GLM-5.2, Kimi K2.6 and
+Claude Opus 4.8; the generation-hygiene audit and uniform normalization; the equivalence,
+multiplicity and contamination analyses; the moderation-refusal audit; the table generator;
+caught the curly-quote artifact in segmentation entropy in July and re-scored DeepSeek and
+Grok (commits c2fc621, 7b1ff70 and ed1575a in the original repository); and presenting the
+poster at LP4FM in Sydney (NeurIPS 2026).
+
+Development history: github.com/Dicoangelo/burstiness-engine (private; available on request).
+The camera-ready work is in this repository's history.
+
+## License
+
+Code: Apache 2.0 (see LICENSE). Data: the Hugging Face dataset burstiness-engine/sentence-length-dispersion is
+released under CC BY 2.5, the licence of the English Wikinews articles it contains; its card carries the attribution.
